@@ -29,9 +29,10 @@ export function Exhibition() {
           .from(".tv-hero-subtitle, .tv-hero-index, .tv-hero-note, .tv-scroll-cue", { opacity: 0, y: 8, duration: 0.55, stagger: 0.05 }, "-=0.3");
         gsap.to(".tv-orbits", { rotate: 24, scale: 1.18, ease: "none", scrollTrigger: { trigger: "#top", start: "top top", end: "bottom top", scrub: 0.8 } });
         gsap.to(".tv-hero-title", { yPercent: -18, ease: "none", scrollTrigger: { trigger: "#top", start: "top top", end: "bottom top", scrub: 0.8 } });
-        gsap.utils.toArray<HTMLElement>(".tv-story-title").forEach((el) => {
+        gsap.utils.toArray<HTMLElement>(".tv-story-title:not(.tv-final-title)").forEach((el) => {
           gsap.from(el, { y: 38, duration: 1.25, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 90%", toggleActions: "play none none reverse" } });
         });
+        gsap.fromTo(".tv-final .tv-section-label, .tv-final-title", { y: 160, opacity: 0 }, { y: 0, opacity: 1, ease: "none", scrollTrigger: { trigger: "#explore", start: "top bottom", end: "top 25%", scrub: 1 } });
         gsap.to(".tv-connection-thread", { scaleX: 1, ease: "none", scrollTrigger: { trigger: ".tv-connection-intro", start: "top 85%", end: "center 45%", scrub: 0.6 } });
         gsap.to(".tv-vision-word", { opacity: 1, stagger: 0.1, ease: "none", scrollTrigger: { trigger: "#vision", start: "top 70%", end: "center center", scrub: 0.5 } });
       });
@@ -134,7 +135,7 @@ export function Exhibition() {
         <section className="tv-final tv-section" id="explore" data-scene-range="0.91,1">
           <div className="tv-section-inner">
             <SectionLabel number="06">YOUR NEXT PERSPECTIVE</SectionLabel>
-            <h2 className="tv-story-title">Two worlds.<br /><em>One vision.</em></h2>
+            <h2 className="tv-story-title tv-final-title">Two worlds.<br /><em>One vision.</em></h2>
             <div className="tv-scene-slot" data-visual="explore" aria-hidden />
             <div className="tv-final-actions"><ProjectCta project={PROJECTS.imagined} /><ProjectCta project={PROJECTS.earth} /></div>
           </div>

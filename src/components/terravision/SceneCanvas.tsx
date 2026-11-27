@@ -66,6 +66,12 @@ export default function SceneCanvas({ lite }: { lite: boolean }) {
         sceneState.activeSection = node.id;
       }
       sceneState.scroll = next;
+      const fin = document.querySelector<HTMLElement>(".tv-final-title");
+      if (fin) {
+        const r = fin.getBoundingClientRect(), vh = window.innerHeight;
+        sceneState.finalRise = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.75)));
+        sceneState.finalY = 1 - ((r.top + r.height / 2) / vh) * 2;
+      }
       const stage = wrap.current?.parentElement;
       if (stage && window.innerWidth <= 768) {
         const slots = Array.from(document.querySelectorAll<HTMLElement>('[data-visual]'));
