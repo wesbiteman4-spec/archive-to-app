@@ -37,16 +37,14 @@ export function SiteNav() {
   const go = (id: string) => { setOpen(false); scrollToSection(id); };
 
   return (
-    <>
-      <header className="tv-nav-wrap">
-        <nav className="tv-nav" aria-label="Main">
-          <button className="tv-mark" onClick={() => go("top")}>TerraVision<span>—OS</span></button>
-          <div className="tv-nav-right">
-            <button className="tv-nav-mini" onClick={() => go("the-connection")}>About</button>
-            <button className="tv-nav-mini" onClick={() => go("explore")}>Projects</button>
-          </div>
-        </nav>
-      </header>
+    <header className="tv-nav-wrap">
+      <nav className="tv-nav" aria-label="Main">
+        <button className="tv-mark" onClick={() => go("top")}>TerraVision<span>—OS</span></button>
+        <div className="tv-nav-right">
+          <button className="tv-nav-mini" onClick={() => go("the-connection")}>About</button>
+          <button className="tv-nav-mini" onClick={() => go("explore")}>Projects</button>
+        </div>
+      </nav>
       <button className="tv-menu-fab" aria-expanded={open} aria-controls="site-menu" onClick={() => setOpen((v) => !v)}>
         <span className="tv-menu-lines" data-open={open} aria-hidden><i /><i /></span>{open ? "Close" : "Menu"}
       </button>
@@ -60,6 +58,6 @@ export function SiteNav() {
           ))}
         </div>
       )}
-    </>
+    </header>
   );
 }

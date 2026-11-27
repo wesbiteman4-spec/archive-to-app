@@ -79,7 +79,7 @@
   em { font-weight: 400; }
 }
 
-.tv-exhibition { position: relative; isolation: isolate; overflow: clip; background-color: var(--background); background-image: linear-gradient(var(--exhibition-grid) 1px, transparent 1px), linear-gradient(90deg, var(--exhibition-grid) 1px, transparent 1px); background-size: 120px 120px; }
+.tv-exhibition { position: relative; isolation: isolate; overflow: clip; background-image: linear-gradient(var(--exhibition-grid) 1px, transparent 1px), linear-gradient(90deg, var(--exhibition-grid) 1px, transparent 1px); background-size: 120px 120px; }
 .tv-exhibition::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: radial-gradient(ellipse at 50% 44%, var(--exhibition-haze), transparent 65%); }
 .tv-exhibition main, .tv-footer { position: relative; z-index: 2; }
 .tv-skip-link { position: fixed; left: 20px; top: -100px; z-index: 100; padding: 12px 18px; background: var(--primary); color: var(--background); }
@@ -415,15 +415,15 @@
 .tv-hero-backdrop > i > b:first-child { background: var(--charcoal); }
 .tv-hero-backdrop > i > b:last-child { background: var(--ivory); }
 .tv-hero-frame { inset: 82px 4.5% 64px; border-radius: 30px; box-shadow: none; }
-/* Nav inverts against whatever section scrolls behind it, so it stays readable everywhere. */
-.tv-nav-wrap { mix-blend-mode: difference; color: var(--orbit-line); }
+.tv-nav-wrap { mix-blend-mode: normal; }
 .tv-nav { padding: 100px calc(4.5% + 30px) 0; transition: padding .4s; }
-.tv-mark { color: inherit; font-size: 19px; font-weight: 500; text-transform: uppercase; letter-spacing: -0.01em; }
-.tv-mark span { opacity: .78; }
+.tv-mark { color: var(--ivory); font-size: 19px; font-weight: 500; text-transform: uppercase; letter-spacing: -0.01em; }
 .tv-nav-right { gap: 0; }
-.tv-nav-mini { color: inherit; text-transform: uppercase; font-size: 11px; letter-spacing: .04em; }
-.tv-nav-mini:last-child { border: 1px solid oklch(0.96 0.01 85 / 0.45); border-radius: 999px; padding: 0 20px; margin-left: 6px; }
+.tv-nav-mini { color: var(--ivory-ink); text-transform: uppercase; font-size: 11px; letter-spacing: .04em; }
+.tv-nav-mini:last-child { border: 1px solid oklch(0.2 0.006 80 / 0.15); border-radius: 999px; padding: 0 20px; margin-left: 6px; }
 .tv-nav-wrap.tv-nav-scrolled .tv-nav { padding-top: 18px; }
+.tv-nav-wrap.tv-nav-scrolled .tv-mark { color: var(--foreground); }
+.tv-nav-wrap.tv-nav-scrolled .tv-nav-mini { color: var(--foreground); border-color: var(--border); }
 .tv-orbits { mix-blend-mode: normal; }
 .tv-orbit, .tv-orbit-ticks line, .tv-orbit-marks line { stroke: oklch(0.6 0.01 85); }
 .tv-orbit-marks circle, .tv-orbit-marks rect, .tv-orbit-marks text { fill: oklch(0.6 0.01 85); }
