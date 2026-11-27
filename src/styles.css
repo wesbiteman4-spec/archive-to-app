@@ -317,6 +317,8 @@
   --ivory-ink: oklch(0.2 0.006 80);
   --ivory-muted: oklch(0.45 0.01 80);
   --orbit-line: oklch(0.96 0.01 85);
+  --nav-invert: oklch(1 0 0);
+  --nav-invert-line: oklch(1 0 0 / 0.55);
   --frame-shadow: 0 40px 90px -40px oklch(0 0 0 / 0.55), 0 0 0 1px oklch(0.6 0.01 85 / 0.18);
   --font-editorial: "Familjen Grotesk", "Manrope", sans-serif;
 }
@@ -334,7 +336,7 @@
 .tv-menu-lines[data-open="true"] i:first-child { transform: translateY(2.5px) rotate(45deg); }
 .tv-menu-lines[data-open="true"] i:last-child { transform: translateY(-2.5px) rotate(-45deg); }
 .tv-menu-panel { position: fixed; right: 4.5%; bottom: 84px; z-index: 30; width: min(320px, 91vw); padding: 10px; border-radius: 22px; background: oklch(0.17 0.004 80 / 0.82); border: 1px solid var(--border); backdrop-filter: blur(20px); mix-blend-mode: normal; }
-.tv-scroll-meter { position: fixed; left: 4.5%; bottom: 34px; width: 1px; height: 46px; background: oklch(0.96 0.01 85 / 0.2); }
+.tv-scroll-meter { position: fixed; left: 4.5%; bottom: 34px; z-index: 20; width: 1px; height: 46px; background: oklch(0.96 0.01 85 / 0.2); }
 .tv-scroll-meter span { display: block; height: 100%; background: currentColor; transform-origin: top; }
 .tv-progress { display: none; }
 
@@ -415,12 +417,12 @@
 .tv-hero-backdrop > i > b:first-child { background: var(--charcoal); }
 .tv-hero-backdrop > i > b:last-child { background: var(--ivory); }
 .tv-hero-frame { inset: 82px 4.5% 64px; border-radius: 30px; box-shadow: none; }
-.tv-nav-wrap { mix-blend-mode: normal; }
+.tv-nav-wrap { mix-blend-mode: difference; }
 .tv-nav { padding: 100px calc(4.5% + 30px) 0; transition: padding .4s; }
-.tv-mark { color: var(--ivory); font-size: 19px; font-weight: 500; text-transform: uppercase; letter-spacing: -0.01em; }
+.tv-mark { color: var(--nav-invert); font-size: 19px; font-weight: 500; text-transform: uppercase; letter-spacing: -0.01em; }
 .tv-nav-right { gap: 0; }
-.tv-nav-mini { color: var(--ivory-ink); text-transform: uppercase; font-size: 11px; letter-spacing: .04em; }
-.tv-nav-mini:last-child { border: 1px solid oklch(0.2 0.006 80 / 0.15); border-radius: 999px; padding: 0 20px; margin-left: 6px; }
+.tv-nav-mini { color: var(--nav-invert); text-transform: uppercase; font-size: 11px; letter-spacing: .04em; }
+.tv-nav-mini:last-child { border: 1px solid var(--nav-invert-line); border-radius: 999px; padding: 0 20px; margin-left: 6px; }
 .tv-nav-wrap.tv-nav-scrolled .tv-nav { padding-top: 18px; }
 .tv-nav-wrap.tv-nav-scrolled .tv-mark { color: var(--foreground); }
 .tv-nav-wrap.tv-nav-scrolled .tv-nav-mini { color: var(--foreground); border-color: var(--border); }
