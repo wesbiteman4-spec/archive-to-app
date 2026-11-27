@@ -469,7 +469,7 @@
   height: 54%;
   margin: 0;
   font-family: var(--font-editorial);
-  font-size: clamp(62px, 8.6vw, 118px);
+  font-size: clamp(40px, 5.2vw, 72px);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0;
@@ -529,7 +529,7 @@
   .tv-hero h1.tv-hero-title {
     top: 16%;
     height: 48%;
-    font-size: clamp(30px, 9vw, 42px);
+    font-size: clamp(22px, 6.4vw, 30px);
   }
   .tv-hero h1.tv-hero-title .tv-mask-b { top: 42%; }
   .tv-hero h1.tv-hero-title .tv-mask-c { top: 84%; }

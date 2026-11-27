@@ -53,9 +53,9 @@ export function Exhibition() {
             <div className="tv-scene-slot tv-hero-slot" data-visual="top" aria-hidden />
             <p className="tv-hero-index"><span>TV—OS / 001</span><span>A digital exhibition</span></p>
             <h1 id="hero-title" className="tv-hero-title">
-              <span className="tv-mask"><span className="tv-line tv-line-a">TerraVision</span></span>
-              <span className="tv-mask"><span className="tv-line tv-line-b">Two worlds</span></span>
-              <span className="tv-mask"><span className="tv-line tv-line-c">One vision<sup>OS</sup></span></span>
+              <span className="tv-mask tv-mask-a"><span className="tv-line tv-line-a">TerraVision</span></span>
+              <span className="tv-mask tv-mask-b"><span className="tv-line tv-line-b">Two worlds</span></span>
+              <span className="tv-mask tv-mask-c"><span className="tv-line tv-line-c">One vision<sup>OS</sup></span></span>
             </h1>
             <p className="tv-hero-subtitle">Imagination ×<br /><em>planetary understanding.</em></p>
             <div className="tv-territories">
