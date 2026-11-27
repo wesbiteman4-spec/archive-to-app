@@ -31,11 +31,23 @@ function EarthModel() {
     return wrap;
   }, [gltf]);
   const material = useMemo(() => new THREE.MeshStandardMaterial({ roughness: 0.75, metalness: 0.05 }), []);
+  const dim = useRef(1);
   useEffect(() => {
     material.map = map;
-    material.color.set(map ? "#ffffff" : "#6f8fa8");
     material.needsUpdate = true;
   }, [map, material]);
+  // The closing section fades the globe so the title in front of it leads.
+  useFrame((_, raw) => {
+    const delta = Math.min(raw, 0.1);
+    const rise = sceneState.finalRise;
+    const final = rise > 0 && sceneState.scroll > 0.82;
+    const ease = rise * rise * (3 - 2 * rise);
+    const target = final ? 1 - ease * 0.55 : 1;
+    dim.current += (target - dim.current) * (1 - Math.exp(-3 * delta));
+    if (map) material.color.setScalar(dim.current);
+    else material.color.set("#6f8fa8");
+    material.envMapIntensity = 1 - (final ? ease * 0.6 : 0);
+  });
   useEffect(() => {
     scene.traverse((o) => { if ((o as THREE.Mesh).isMesh) (o as THREE.Mesh).material = material; });
     return () => material.dispose();

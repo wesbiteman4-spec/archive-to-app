@@ -548,3 +548,47 @@
 @media (max-width: 359px) {
   .tv-hero h1.tv-hero-title { font-size: clamp(28px, 9vw, 32px); }
 }
+
+/* Finale: the closing label inverts against whatever passes behind it, and the
+   Earth fades behind a gradient so the closing title carries the ending. */
+.tv-final .tv-section-label {
+  position: relative;
+  z-index: 2;
+  color: var(--nav-invert);
+  mix-blend-mode: difference;
+}
+.tv-final .tv-section-label > span:first-child { color: var(--nav-invert); }
+.tv-final .tv-label-line { background: var(--nav-invert); }
+
+.tv-final .tv-story-title {
+  color: var(--nav-invert);
+  text-shadow: 0 2px 26px oklch(0.1 0.01 260 / 0.95), 0 0 70px oklch(0.1 0.01 260 / 0.75);
+}
+.tv-final .tv-story-title em { color: var(--nav-invert); }
+.tv-final .tv-story-title::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: min(160vw, 1500px);
+  height: min(125svh, 1150px);
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(closest-side,
+    oklch(0.115 0.006 260 / 0.88) 0%,
+    oklch(0.115 0.006 260 / 0.66) 34%,
+    oklch(0.115 0.006 260 / 0.3) 64%,
+    transparent 86%);
+}
+
+@media (max-width: 768px) {
+  .tv-final .tv-story-title::before {
+    width: 150vw;
+    height: 340px;
+    background: radial-gradient(closest-side,
+      oklch(0.115 0.006 260 / 0.72) 0%,
+      oklch(0.115 0.006 260 / 0.4) 48%,
+      transparent 82%);
+  }
+}
